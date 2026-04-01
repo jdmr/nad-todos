@@ -1,0 +1,18 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go build output
+api/todos
+
+# Air tmp directory
+tmp/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
