@@ -119,6 +119,23 @@ func (h *TodoHandler) UpdateTodo(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Todo ID in payload does not match URL", http.StatusBadRequest)
 		return
 	}
+
+	result, err := h.pool.Exec(context.Background(), "UPDATE todos SET title = $1, completed = $2 WHERE id = $3", todo.Title, todo.Completed, todoIDInt)
+	if err != nil {
+		http.Error(w, "Failed to update todo", http.StatusInternalServerError)
+		return
+	}
+	if result.RowsAffected() == 0 {
+		http.Error(w, "Todo not found", http.StatusNotFound)
+		return
+	}
+
+	todo.ID = todoIDInt
+	w.Header().Set("Content-Type", "application/json")
+	if err := json.NewEncoder(w).Encode(todo); err != nil {
+		http.Error(w, "Failed to encode response", http.StatusInternalServerError)
+		return
+	}
 }
 
 func (h *TodoHandler) DeleteTodo(w http.ResponseWriter, r *http.Request) {
