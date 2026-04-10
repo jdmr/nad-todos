@@ -1,0 +1,74 @@
+:root {
+  --color-bg: #f7f4ef;
+  --color-surface: #ffffff;
+  --color-text: #2d2826;
+  --color-text-secondary: #8a8078;
+  --color-text-muted: #b8b0a4;
+  --color-border: rgba(45, 40, 38, 0.12);
+  --color-border-hover: rgba(45, 40, 38, 0.22);
+  --color-accent: #c44d2b;
+  --color-accent-hover: #a83d20;
+  --color-check: #5a8a5e;
+  --color-check-hover: #4a7a4e;
+  --color-danger: #c44d2b;
+  --color-danger-hover: #a83d20;
+  --color-error-bg: #fdf0ed;
+  --color-error-text: #9e3a1c;
+
+  --font-display: 'Young Serif', Georgia, serif;
+  --font-body: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --shadow-sm: 0 1px 3px rgba(45, 40, 38, 0.04), 0 1px 2px rgba(45, 40, 38, 0.06);
+  --shadow-md: 0 4px 12px rgba(45, 40, 38, 0.07), 0 2px 4px rgba(45, 40, 38, 0.04);
+  --shadow-lg: 0 10px 30px rgba(45, 40, 38, 0.1), 0 4px 8px rgba(45, 40, 38, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1816;
+    --color-surface: #262321;
+    --color-text: #e8e2d9;
+    --color-text-secondary: #9a9088;
+    --color-text-muted: #6a6058;
+    --color-border: rgba(232, 226, 217, 0.1);
+    --color-border-hover: rgba(232, 226, 217, 0.18);
+    --color-accent: #d4714f;
+    --color-accent-hover: #e08565;
+    --color-check: #6fa473;
+    --color-check-hover: #7fb483;
+    --color-danger: #d4714f;
+    --color-danger-hover: #e08565;
+    --color-error-bg: #2e1f1a;
+    --color-error-text: #e09880;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
